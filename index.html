@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Informativa con Imagen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #eef2f7;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            transition: background-color 0.5s ease;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px;
+        }
+        
+        .image-section {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .info-section {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .image-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .featured-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .featured-image:hover {
+            transform: scale(1.03);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #6a11cb;
+        }
+        
+        .info-text {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+        
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #2575fc;
+            margin: 20px 0;
+        }
+        
+        .controls {
+            background-color: #f8f9fa;
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+        
+        .color-picker {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+        
+        .color-option.active {
+            border-color: #333;
+        }
+        
+        .custom-color {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .custom-color input {
+            width: 60px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .custom-color label {
+            font-weight: 500;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .image-section {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Maravillas Naturales</h1>
+            <p class="subtitle">Descubre la belleza y diversidad de nuestro planeta</p>
+        </header>
+        
+        <div class="content">
+            <section class="image-section">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Paisaje natural de montañas y lago" class="featured-image" id="main-image">
+                </div>
+                <div class="image-controls" style="margin-top: 20px; text-align: center;">
+                    <button onclick="changeImage()" style="padding: 10px 20px; background-color: #6a11cb; color: white; border: none; border-radius: 5px; cursor: pointer;">Cambiar Imagen</button>
+                </div>
+            </section>
+            
+            <section class="info-section">
+                <h2>Biodiversidad en Peligro</h2>
+                <p class="info-text">
+                    Nuestro planeta alberga una increíble variedad de ecosistemas, desde las profundidades oceánicas hasta las cimas de las montañas más altas. Cada uno de estos entornos es hogar de especies únicas que han evolucionado durante millones de años para adaptarse a condiciones específicas.
+                </p>
+                
+                <div class="highlight">
+                    <p>La deforestación, la contaminación y el cambio climático están amenazando estos ecosistemas a un ritmo sin precedentes. Se estima que más de un millón de especies están en peligro de extinción debido a la actividad humana.</p>
+                </div>
+                
+                <p class="info-text">
+                    La conservación de la biodiversidad no es solo una cuestión de proteger especies individuales, sino de preservar los complejos sistemas ecológicos que sostienen la vida en la Tierra. Estos sistemas nos proporcionan aire limpio, agua potable, alimentos y medicamentos, además de regular el clima.
+                </p>
+                
+                <h3 style="margin-top: 30px; color: #2c3e50;">Cómo puedes ayudar</h3>
+                <ul style="padding-left: 20px; margin-top: 10px;">
+                    <li>Reduce tu consumo de plásticos de un solo uso</li>
+                    <li>Apoya proyectos de conservación local</li>
+                    <li>Elige productos sostenibles y responsables con el medio ambiente</li>
+                    <li>Educa a otros sobre la importancia de la biodiversidad</li>
+                </ul>
+            </section>
+        </div>
+        
+        <div class="controls">
+            <h3>Personaliza el color de fondo</h3>
+            <p>Selecciona uno de los colores predefinidos o elige tu propio color:</p>
+            
+            <div class="color-picker">
+                <div class="color-option active" style="background-color: #eef2f7;" onclick="changeBackgroundColor('#eef2f7')"></div>
+                <div class="color-option" style="background-color: #fef9e7;" onclick="changeBackgroundColor('#fef9e7')"></div>
+                <div class="color-option" style="background-color: #e8f6f3;" onclick="changeBackgroundColor('#e8f6f3')"></div>
+                <div class="color-option" style="background-color: #fdedec;" onclick="changeBackgroundColor('#fdedec')"></div>
+                <div class="color-option" style="background-color: #f4ecf7;" onclick="changeBackgroundColor('#f4ecf7')"></div>
+                <div class="color-option" style="background-color: #eaf2f8;" onclick="changeBackgroundColor('#eaf2f8')"></div>
+            </div>
+            
+            <div class="custom-color">
+                <label for="custom-color-input">Personalizado:</label>
+                <input type="color" id="custom-color-input" value="#eef2f7" onchange="changeBackgroundColor(this.value)">
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2023 Página Informativa sobre Biodiversidad | Diseñada para mostrar imagen, título e información con fondo personalizable</p>
+        </footer>
+    </div>
+
+    <script>
+        // Array de imágenes de ejemplo (puedes reemplazarlas con tus propias URLs)
+        const images = [
+            "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+            "https://images.unsplash.com/photo-1439066615861-d1af74d74000",
+            "https://images.unsplash.com/photo-1475924156734-496f6cac6ec1",
+            "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07"
+        ];
+        
+        let currentImageIndex = 0;
+        
+        // Función para cambiar la imagen
+        function changeImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            document.getElementById('main-image').src = images[currentImageIndex];
+        }
+        
+        // Función para cambiar el color de fondo
+        function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+            
+            // Actualizar el selector de color personalizado
+            document.getElementById('custom-color-input').value = color;
+            
+            // Actualizar los indicadores de color activo
+            const colorOptions = document.querySelectorAll('.color-option');
+            colorOptions.forEach(option => {
+                option.classList.remove('active');
+                if (option.style.backgroundColor === color || hexToRgb(option.style.backgroundColor) === color) {
+                    option.classList.add('active');
+                }
+            });
+        }
+        
+        // Función auxiliar para convertir colores hex a rgb
+        function hexToRgb(hex) {
+            // Si ya es un color rgb, devolverlo tal cual
+            if (hex.startsWith('rgb')) return hex;
+            
+            // Convertir hex a rgb
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? 
+                `rgb(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)})` : 
+                hex;
+        }
+        
+        // Inicializar con el primer color
+        document.addEventListener('DOMContentLoaded', function() {
+            changeBackgroundColor('#eef2f7');
+        });
+    </script>
+</body>
+</html>
