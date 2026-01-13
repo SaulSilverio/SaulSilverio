@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Primera Página Web</title>
+    <style>
+        
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+        }
+        
+       
+        h1 {
+            color: darkblue;
+            text-align: center;
+            font-size: 40px;
+        }
+        
+        /
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 20px;
+        }
+        
+        
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 400px;
+            border: 5px solid blue;
+            border-radius: 10px;
+        }
+        
+        
+        .colores {
+            text-align: center;
+            margin: 20px;
+        }
+        
+        .boton-color {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin: 10px;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body id="pagina">
+    
+   
+    <h1>¡Bienvenido a mi página web!</h1>
+    
+    
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Paisaje bonito">
+    
+    
+    <p>Esta es mi primera página web. Estoy aprendiendo a crear páginas web con HTML y CSS. Aquí puedo poner información, imágenes y cambiar colores. ¡Es muy divertido aprender a hacer páginas web!</p>
+    
+    <p>En esta página puedes cambiar el color de fondo haciendo clic en los botones de colores que están abajo. Cada botón tiene un color diferente.</p>
+    
+    
+    <div class="colores">
+        <h3>Cambia el color de fondo:</h3>
+        
+        
+        <div class="boton-color" style="background-color: lightblue;" onclick="cambiarColor('lightblue')"></div>
+        <div class="boton-color" style="background-color: lightgreen;" onclick="cambiarColor('lightgreen')"></div>
+        <div class="boton-color" style="background-color: lightpink;" onclick="cambiarColor('lightpink')"></div>
+        <div class="boton-color" style="background-color: lightyellow;" onclick="cambiarColor('lightyellow')"></div>
+        <div class="boton-color" style="background-color: lavender;" onclick="cambiarColor('lavender')"></div>
+        <div class="boton-color" style="background-color: white;" onclick="cambiarColor('white')"></div>
+    </div>
+    
+    <p style="text-align: center; font-weight: bold; margin-top: 30px;">¡Sigue aprendiendo a crear páginas web!</p>
+
+    <script>
+        
+        function cambiarColor(color) {
+            document.getElementById("pagina").style.backgroundColor = color;
+        }
+        
+        
+        function cambiarImagen() {
+            
+            alert("Aquí cambiaríamos la imagen si tuvieras varias imágenes");
+        }
+    </script>
+    
+</body>
+</html>
